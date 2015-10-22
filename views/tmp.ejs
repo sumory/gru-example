@@ -4,30 +4,6 @@
     <title>Gru Example</title>
     <%- include ./common/meta.ejs %>
 
-
-
-    <style>
-        .direct-chat-text{
-            max-width:500px;
-        }
-
-        .direct-chat-primary .right>.direct-chat-text {
-            float: right;
-            max-width: 500px;
-        }
-
-        .direct-chat-msg .direct-chat-name.pull-left{
-            margin-right: 10px;
-        }
-
-        .direct-chat-msg .direct-chat-name.pull-right{
-            margin-left: 10px;
-        }
-
-        .right .direct-chat-text {
-            margin-right: 10px;
-        }
-    </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
@@ -40,7 +16,9 @@
 
         <!-- Logo -->
         <a href="index2.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>G</b>ru</span>
+            <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>Gru</b>&nbsp;&nbsp;Chat</span>
         </a>
 
@@ -53,6 +31,42 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="dropdown messages-menu">
+                        <!-- Menu toggle button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-success">4</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 4 messages</li>
+                            <li>
+                                <!-- inner menu: contains the messages -->
+                                <ul class="menu">
+                                    <li><!-- start message -->
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <!-- User Image -->
+                                                <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <!-- Message title and timestamp -->
+                                            <h4>
+                                                Support Team
+                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                            </h4>
+                                            <!-- The message -->
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <!-- end message -->
+                                </ul>
+                                <!-- /.menu -->
+                            </li>
+                            <li class="footer"><a href="#">See All Messages</a></li>
+                        </ul>
+                    </li>
+                    <!-- /.messages-menu -->
+
                     <!-- Notifications Menu -->
                     <li class="dropdown notifications-menu">
                         <!-- Menu toggle button -->
@@ -61,38 +75,95 @@
                             <span class="label label-warning">10</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">您有 10 个提醒</li>
+                            <li class="header">You have 10 notifications</li>
                             <li>
                                 <!-- Inner Menu: contains the notifications -->
                                 <ul class="menu">
                                     <li><!-- start notification -->
                                         <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 详细信息
+                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
                                         </a>
                                     </li>
                                     <!-- end notification -->
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#">更多...</a></li>
+                            <li class="footer"><a href="#">View all</a></li>
                         </ul>
                     </li>
-
-                    <!-- User Account Menu -->
-                    <li class="dropdown user user-menu">
+                    <!-- Tasks Menu -->
+                    <li class="dropdown tasks-menu">
+                        <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Sumory</span>
+                            <i class="fa fa-flag-o"></i>
+                            <span class="label label-danger">9</span>
                         </a>
                         <ul class="dropdown-menu">
+                            <li class="header">You have 9 tasks</li>
+                            <li>
+                                <!-- Inner menu: contains the tasks -->
+                                <ul class="menu">
+                                    <li><!-- Task item -->
+                                        <a href="#">
+                                            <!-- Task title and progress text -->
+                                            <h3>
+                                                Design some buttons
+                                                <small class="pull-right">20%</small>
+                                            </h3>
+                                            <!-- The progress bar -->
+                                            <div class="progress xs">
+                                                <!-- Change the css width attribute to simulate progress -->
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
+                                                    <span class="sr-only">20% Complete</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- end task item -->
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="#">View all tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">Alexander Pierce</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- The user image in the menu -->
                             <li class="user-header">
                                 <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
                                 <p>
-                                    Sumory Wu
-                                    <small>sumory.com</small>
+                                    Alexander Pierce - Web Developer
+                                    <small>Member since Nov. 2012</small>
                                 </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <li class="user-body">
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Followers</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Sales</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Friends</a>
+                                </div>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>
                                 <div class="pull-right">
                                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
@@ -107,10 +178,10 @@
             </div>
         </nav>
     </header>
-    <!-- Header end -->
-
-    <!-- left sidebar start -->
+    <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
 
             <!-- Sidebar user panel (optional) -->
@@ -119,7 +190,7 @@
                     <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Sumory</p>
+                    <p>Alexander Pierce</p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -139,145 +210,42 @@
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-                <li class="header">Inbox</li>
-                <li class="treeview active">
-                    <a href="pages/mailbox/mailbox.html">
-                        <i class="fa fa-envelope"></i> <span>Friends</span>
-                        <small class="label pull-right bg-red">12</small>
-                    </a>
-
+                <li class="header">HEADER</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+                <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i
+                                class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li>
-                            <a href="#">
-                                <img src="/AdminLTE/dist/img/user2-160x160.jpg" style="width:28px;margin-right:8px;" class="img-circle" alt="User Image">
-                                <span>张三</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/AdminLTE/dist/img/user2-160x160.jpg" style="width:28px;margin-right:8px;" class="img-circle" alt="User Image">
-                                <span>张三</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/AdminLTE/dist/img/user2-160x160.jpg" style="width:28px;margin-right:8px;" class="img-circle" alt="User Image">
-                                <span>张三</span>
-                                <span class="label label-primary pull-right">13</span>
-                            </a>
-
-                        </li>
+                        <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Link in level 2</a></li>
                     </ul>
-                </li>
-
-                <li class="active">
-                    <a href="#"><i class="fa fa-group"></i> <span>Groups</span></a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> group1</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> group2</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> group3</a></li>
-
-                    </ul>
-
-
                 </li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
     </aside>
-    <!-- left sidebar end -->
-
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                与 XXX 会话
-                <small>2015-10-22 23:40</small>
+                Page Header
+                <small>Optional description</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 聊天记录</a></li>
-                <li class="active">20</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                <li class="active">Here</li>
             </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
 
-            <div class="row">
-                <div class="col-md-12">
-                <!-- DIRECT CHAT PRIMARY -->
-                <div class="box box-primary direct-chat direct-chat-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Chat</h3>
-                        <div class="box-tools pull-right">
-                            <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
-                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                            <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
-                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div><!-- /.box-header -->
-                    <div class="box-body">
-                        <!-- Conversations are loaded here -->
-                        <div class="direct-chat-messages">
-                            <!-- Message. Default to the left -->
-                            <div class="direct-chat-msg">
-                                <div class="direct-chat-info clearfix">
-                                    <span class="direct-chat-name pull-left">Sera</span>
-                                    <span class="direct-chat-timestamp pull-left">10-22 23:45</span>
-                                </div><!-- /.direct-chat-info -->
-                                <img class="direct-chat-img" src="/AdminLTE/dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
-                                <div class="direct-chat-text">
-                                    Is this template really for free? That's unbelievable!
-                                </div><!-- /.direct-chat-text -->
-                            </div><!-- /.direct-chat-msg -->
-
-                            <!-- Message to the right -->
-                            <div class="direct-chat-msg right">
-                                <div class="direct-chat-info clearfix">
-                                    <span class="direct-chat-name pull-right">Sumory</span>
-                                    <span class="direct-chat-timestamp pull-right">10-23 00:11</span>
-                                </div><!-- /.direct-chat-info -->
-                                <img class="direct-chat-img" src="/AdminLTE/dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
-                                <div class="direct-chat-text">
-                                    You better believe it!
-                                </div><!-- /.direct-chat-text -->
-                            </div><!-- /.direct-chat-msg -->
-                        </div><!--/.direct-chat-messages-->
-
-                        <!-- Contacts are loaded here -->
-                        <div class="direct-chat-contacts">
-                            <ul class="contacts-list">
-                                <li>
-                                    <a href="#">
-                                        <img class="contacts-list-img" src="/AdminLTE/dist/img/user1-128x128.jpg">
-                                        <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Count Dracula
-                              <small class="contacts-list-date pull-right">2/28/2015</small>
-                            </span>
-                                            <span class="contacts-list-msg">How have you been? I was...</span>
-                                        </div><!-- /.contacts-list-info -->
-                                    </a>
-                                </li><!-- End Contact Item -->
-                            </ul><!-- /.contatcts-list -->
-                        </div><!-- /.direct-chat-pane -->
-                    </div><!-- /.box-body -->
-                    <div class="box-footer">
-                        <form action="#" method="post">
-                            <div class="input-group">
-                                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary btn-flat">Send</button>
-                      </span>
-                            </div>
-                        </form>
-                    </div><!-- /.box-footer-->
-                </div><!--/.direct-chat -->
-            </div>
-            </div>
+            <!-- Your Page Content Here -->
 
         </section>
         <!-- /.content -->
