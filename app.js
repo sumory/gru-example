@@ -36,28 +36,38 @@ app.use(expressSession({
 //app.use(csrf());
 app.use(express.static(config.staticPath));
 
-//var whitelist = config.whitelist;
-//app.use(function(req, res, next) {//判断是否登录的中间件
-//    var requestPath = req.path;//请求的uri
-//    var inWhitelist = false;
-//    for (var i in whitelist) {
-//        if (requestPath == whitelist[i]) {
-//            inWhitelist = true;
-//            break;
-//        }
-//    }
-//
-//    if (inWhitelist) {//在白名单中，不需要过滤
-//        next();
-//    }else{
-//        if(req.session && req.session.admin){//如果存在session则继续
-//            next();
-//        }else{
-//            res.redirect("/auth/login");
-//        }
-//    }
-//});
+var whitelist = config.whitelist;
+app.use(function(req, res, next) {//判断是否登录的中间件
+    var requestPath = req.path;//请求的uri
+    var inWhitelist = false;
+    console.log("requestPath", requestPath);
 
+    for (var i in whitelist) {
+        if (requestPath == whitelist[i]) {
+            inWhitelist = true;
+            break;
+        }
+    }
+
+    if (inWhitelist) {//在白名单中，不需要过滤
+        next();
+    }else{
+        if(req.session && req.session.user){//如果存在session则继续
+            next();
+        }else{
+            res.redirect("/auth/login");
+        }
+    }
+});
+
+app.use(function (req, res, next) {
+    if(req && req.session && req.session.user){
+        res.locals.isLogin = true;
+        res.locals.loginUser = req.session.user;
+    }
+
+    next();
+});
 
 route(app); //加载routes
 

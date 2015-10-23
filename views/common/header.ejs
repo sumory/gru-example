@@ -1,6 +1,84 @@
+<!-- Main Header -->
+<header class="main-header">
+	<!-- Logo -->
+	<a href="index2.html" class="logo">
+		<span class="logo-mini"><b>G</b>ru</span>
+		<span class="logo-lg"><b>Gru</b>&nbsp;&nbsp;Chat</span>
+	</a>
+
+	<!-- Header Navbar -->
+	<nav class="navbar navbar-static-top" role="navigation">
+		<!-- Sidebar toggle button-->
+		<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+			<span class="sr-only">Toggle navigation</span>
+		</a>
+		<!-- Navbar Right Menu -->
+		<div class="navbar-custom-menu">
+			<ul class="nav navbar-nav">
+				<!-- Notifications Menu -->
+				<li class="dropdown notifications-menu">
+					<!-- Menu toggle button -->
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-bell-o"></i>
+						<span class="label label-warning">10</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="header"> 10 notifications</li>
+						<li>
+							<!-- Inner Menu: contains the notifications -->
+							<ul class="menu">
+								<li><!-- start notification -->
+									<a href="#">
+										<i class="fa fa-users text-aqua"></i> more...
+									</a>
+								</li>
+								<!-- end notification -->
+							</ul>
+						</li>
+						<li class="footer"><a href="#">更多...</a></li>
+					</ul>
+				</li>
+
+				<!-- User Account Menu -->
+				<li class="dropdown user user-menu">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<% if(locals.isLogin){%>
+						<img src="/AdminLTE/dist/img/<%=locals.loginUser.avatar%>" class="user-image" alt="User Image">
+						<span class="hidden-xs">
+								<%=locals.loginUser.name%>
+						</span>
+						<%}%>
 
 
-<script>
-	$(document).ready(function(){
-	});
-</script>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="user-header">
+							<% if(locals.isLogin){%>
+								<img src="/AdminLTE/dist/img/<%=locals.loginUser.avatar%>" class="img-circle" alt="User Image">
+							<%}else{%>
+								<img src="/AdminLTE/dist/img/avatar5.png" class="img-circle" alt="User Image">
+							<%}%>
+							<p>
+								<% if(locals.isLogin){%>
+								<%=locals.loginUser.username%>
+								<%}%>
+								<small>
+									<% if(locals.isLogin){%>
+									<%=locals.loginUser.url%>
+									<%}%>
+								</small>
+							</p>
+						</li>
+						<!-- Menu Footer-->
+						<li class="user-footer">
+							<div class="pull-right">
+								<a href="/auth/logout" class="btn btn-default btn-flat">Sign out</a>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<!-- Header end -->

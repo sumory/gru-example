@@ -1,9 +1,11 @@
-var mockRouter = require('./routes/mockRouter.js');
+var authRouter = require('./routes/authRouter.js');
+var profileRouter = require('./routes/profileRouter.js');
 
 module.exports = function (app) {
-    app.use('/mock', mockRouter);//
+    app.use('/auth', authRouter);//
+    app.use('/profile', profileRouter);//
 
     app.get("/", function (req, res, next) {
-        res.render("index");
+        res.redirect("/auth/login");
     });
 };

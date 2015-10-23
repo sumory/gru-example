@@ -1,0 +1,86 @@
+
+<script id="chat-tpl" type="text/template">
+    <div class="row" id="">
+        <div class="col-md-12">
+            <div class="box box-primary direct-chat direct-chat-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Chat</h3>
+                    <div class="box-tools pull-right">
+                        <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div><!-- /.box-header -->
+
+                <div class="box-body">
+                    <div class="direct-chat-messages">
+                        <!-- Message. Default to the left -->
+                        <!-- Message to the right -->
+                    </div><!--/.direct-chat-messages-->
+
+                    <!-- Contacts are loaded here -->
+                    <div class="direct-chat-contacts"></div>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+                    <form action="#" method="post" data-type="" data-id="">
+                        <div class="input-group">
+                            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-flat">Send</button>
+                            </span>
+                        </div>
+                    </form>
+                </div><!-- /.box-footer-->
+            </div><!--/.direct-chat -->
+        </div>
+    </div>
+</script>
+
+
+<script id="chat-msg-left-tpl" type="text/template">
+    <div class="direct-chat-msg">
+        <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-left">Sera</span>
+            <span class="direct-chat-timestamp pull-left">10-22 23:45</span>
+        </div><!-- /.direct-chat-info -->
+        <img class="direct-chat-img" src="/AdminLTE/dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+        <div class="direct-chat-text">
+            Is this template really for free? That's unbelievable!
+        </div><!-- /.direct-chat-text -->
+    </div>
+</script>
+
+
+
+<script id="chat-msg-right-tpl" type="text/template">
+    <div class="direct-chat-msg right">
+        <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-right">Sumory</span>
+            <span class="direct-chat-timestamp pull-right">10-23 00:11</span>
+        </div><!-- /.direct-chat-info -->
+        <img class="direct-chat-img" src="/AdminLTE/dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+        <div class="direct-chat-text">
+            You better believe it!
+        </div><!-- /.direct-chat-text -->
+    </div>
+</script>
+
+
+<script id="chat-contacts-tpl" type="text/template">
+    <ul class="contacts-list">
+        <li>
+            <a href="#">
+                <img class="contacts-list-img" src="/AdminLTE/dist/img/user1-128x128.jpg">
+                <div class="contacts-list-info">
+                                <span class="contacts-list-name">
+                                  Count Dracula
+                                  <small class="contacts-list-date pull-right">2/28/2015</small>
+                                </span>
+                    <span class="contacts-list-msg">How have you been? I was...</span>
+                </div><!-- /.contacts-list-info -->
+            </a>
+        </li><!-- End Contact Item -->
+    </ul><!-- /.contatcts-list -->
+</script>
