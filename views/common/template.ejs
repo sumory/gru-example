@@ -1,12 +1,12 @@
 
 <script id="chat-tpl" type="text/template">
-    <div class="row" id="">
+    <div class="row" id="chat-window-${chatType}-${chatWithId}" style="display:none;">
         <div class="col-md-12">
             <div class="box box-primary direct-chat direct-chat-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Chat</h3>
+                    <h3 class="box-title">${showName}</h3>
                     <div class="box-tools pull-right">
-                        <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
+                        <span data-toggle="tooltip" class="badge bg-light-blue">0</span>
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -24,11 +24,11 @@
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
-                    <form action="#" method="post" data-type="" data-id="">
+                    <form action="#" method="post"  data-type="${chatType}" data-id="${chatWithId}">
                         <div class="input-group">
                             <input type="text" name="message" placeholder="Type Message ..." class="form-control">
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-primary btn-flat">Send</button>
+                                <button type="button" class="btn btn-primary btn-flat send-msg-btn">Send</button>
                             </span>
                         </div>
                     </form>
@@ -42,12 +42,12 @@
 <script id="chat-msg-left-tpl" type="text/template">
     <div class="direct-chat-msg">
         <div class="direct-chat-info clearfix">
-            <span class="direct-chat-name pull-left">Sera</span>
-            <span class="direct-chat-timestamp pull-left">10-22 23:45</span>
+            <span class="direct-chat-name pull-left">${user.name}</span>
+            <span class="direct-chat-timestamp pull-left">${time}</span>
         </div><!-- /.direct-chat-info -->
-        <img class="direct-chat-img" src="/AdminLTE/dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+        <img class="direct-chat-img" src="/AdminLTE/dist/img/${user.avatar}" alt="message user image"><!-- /.direct-chat-img -->
         <div class="direct-chat-text">
-            Is this template really for free? That's unbelievable!
+            ${content}
         </div><!-- /.direct-chat-text -->
     </div>
 </script>
@@ -57,12 +57,12 @@
 <script id="chat-msg-right-tpl" type="text/template">
     <div class="direct-chat-msg right">
         <div class="direct-chat-info clearfix">
-            <span class="direct-chat-name pull-right">Sumory</span>
-            <span class="direct-chat-timestamp pull-right">10-23 00:11</span>
+            <span class="direct-chat-name pull-right">${user.name}</span>
+            <span class="direct-chat-timestamp pull-right">${time}</span>
         </div><!-- /.direct-chat-info -->
-        <img class="direct-chat-img" src="/AdminLTE/dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+        <img class="direct-chat-img" src="/AdminLTE/dist/img/${user.avatar}" alt="message user image"><!-- /.direct-chat-img -->
         <div class="direct-chat-text">
-            You better believe it!
+            ${content}
         </div><!-- /.direct-chat-text -->
     </div>
 </script>

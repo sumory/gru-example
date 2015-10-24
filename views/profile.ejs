@@ -4,15 +4,33 @@
     <title>Gru Chat Dashboard</title>
     <%- include ./common/meta.ejs %>
     <style>
+        .box-body{
+
+        }
+
+        .new-msg-flag{
+            border-radius: 3px;
+            background-color: #D8685E;
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            margin-left: 4px;
+            display:none;
+        }
+
         .direct-chat-messages {
             padding: 10px;
-            height: auto;
+            height:auto;
+            min-height:400px;
             max-height: 500px;
             overflow-y: scroll;
         }
 
         .direct-chat-text{
+            float:left;
+            margin-left:10px;
             max-width:500px;
+            word-wrap: break-word;
         }
 
         .direct-chat-primary .right>.direct-chat-text {
@@ -52,7 +70,7 @@
                         <%}%>
                     </div>
                     <div class="pull-left info">
-                        <p>Sumory</p>
+                        <p><%=locals.loginUser.name%></p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -82,9 +100,10 @@
                                 var user =users[u];
                             %>
                             <li>
-                                <a href="javascript:void(0);" class="chat-user" data-id="<%=user.id%>">
-                                    <img src="/AdminLTE/dist/img/user<%=u%8+1%>-128x128.jpg" style="width:28px;margin-right:8px;" class="img-circle" alt="User Image">
+                                <a href="javascript:void(0);" class="chat-user" data-id="<%=user.id%>" data-name="<%=user.name%>">
+                                    <img src="/AdminLTE/dist/img/<%=user.avatar%>" style="width:28px;margin-right:8px;" class="img-circle" alt="User Image">
                                     <span><%=user.name%></span>
+                                    <span class="new-msg-flag" id="new-msg-user-<%=user.id%>"></span>
                                 </a>
                             </li>
                             <%}%>
@@ -102,7 +121,12 @@
                                 var group =groups[g];
                             %>
 
-                            <li><a href="javascript:void(0);" data-id="<%=group.id%>"><i class="fa fa-circle-o text-red"></i> <%=group.name %></a></li>
+                            <li>
+                                <a href="javascript:void(0);" class="chat-group" data-id="<%=group.id%>" data-name="<%=group.name%>">
+                                    <i class="fa fa-circle-o text-red"></i>
+                                    <%=group.name %>
+                                    <span class="new-msg-flag" id="new-msg-group-<%=group.id%>"></span>
+                                </a></li>
                             <%}%>
 
 
@@ -120,8 +144,8 @@
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
-                    Chat with <span id="chat-user-name">XXX</span>
-                    <small></small>
+
+                    <small><span id="chat-with-name"></span></small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="javascript:void(0);"><i class="fa fa-dashboard"></i> History</a></li>
@@ -152,6 +176,16 @@
 
     <%- include ./common/footer.ejs %>
 
-    <%%>
-</body>
+
+    <script src="/js/socket.io/socket.io.js"></script>
+    <script src="/js/gru/profile.js"></script>
+    <script>
+
+        $(document).ready(function(){
+                Gru.Profile.init();
+        });
+    </script>
+
+
+    </body>
 </html>

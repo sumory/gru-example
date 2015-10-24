@@ -19,6 +19,10 @@ module.exports = {
         "/version"
     ],
 
+    spearNode:{//长连接服务地址
+        url:"http://192.168.100.122:31001"
+    },
+
 
     data: {
         groups: [
@@ -68,7 +72,7 @@ module.exports = {
                 avatar: "user3.jpg",
                 username: "sunny",
                 password: "123456",
-                name: "david",
+                name: "sunny",
                 url: "baidu.com",
                 groups: [
                     180, 190

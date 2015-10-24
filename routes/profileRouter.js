@@ -34,13 +34,55 @@ router.get("/", function (req, res) {
     });
 });
 
+router.get("/getMetaData", function (req, res) {
+    var u = req.session.user;
+
+    var groups = [];
+    var groupMap = {};
+    for (var i in allGroups) {
+        for (var j in u.groups) {
+            if (allGroups[i].id == u.groups[j]) {
+                groups.push(allGroups[i]);
+                groupMap[allGroups[i].id] = allGroups[i];
+            }
+        }
+    }
+
+    var users = [];
+    var userMap = {};
+    for (var i in allUsers) {
+        if (allUsers[i].id != u.id) {
+            users.push(allUsers[i]);
+
+        }
+        userMap[allUsers[i].id] = allUsers[i];
+    }
+
+    return res.json({
+        success:true,
+        data: {
+            url: config.spearNode.url,//长连接服务连接地址
+            myId: u.id,
+            myName: u.name,
+            myUserName: u.username,
+            groups: groups,
+            users: users,
+            userMap:userMap,
+            groupMap:groupMap,
+            groupIds: u.groups.join(",")
+        }
+    });
+});
+
+
 //生成token
 router.get("/genToken", function (req, res, next) {
-    var userId = req.query.userId;
-    var userName = req.query.userName;
+    var u = req.session.user;
+    var userId = u.id;
+    var name = u.name;
 
-    var token1 = commonUtils.md5(userId + "_" + userName, "token_gen_for_ticket@sumory.com");
-    var token2 = commonUtils.md5(userId + "_" + userName + "_" + token1, "token_gen_for_spear@sumory.com");
+    var token1 = commonUtils.md5(userId + "_" + name, "token_gen_for_ticket@sumory.com");
+    var token2 = commonUtils.md5(userId + "_" + name + "_" + token1, "token_gen_for_spear@sumory.com");
 
     res.json({
         success: true,

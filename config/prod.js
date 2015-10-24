@@ -19,6 +19,13 @@ module.exports = {
 		"/version"
 	],
 
+
+    spearNode:{//长连接服务地址
+        url:"http://192.168.100.122:31001"
+    },
+
+
+
     data: {
         groups: [
             {
