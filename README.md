@@ -11,15 +11,17 @@ gru-example基于[Gru](https://github.com/sumory/gru)的示例项目，即时应
 - clone下本示例
 	- npm install相关依赖
 	- 配置文件在config目录下，特别注意spearNode配置，此配置为一个可用的spear节点
-	- 运行node app.js，默认会加载config/dev.js配置文件
+	- 运行node app.js，默认会加载config/dev.js配置文件，连接本地的spear节点
 
 
 #### screenshots
 
-- 私聊
+支持私聊、群聊
 
-![](assets/private-chat.png)
+<table>
+    <tr>
+        <td width="50%"><img src="assets/private-chat.png"/></td>
+        <td width="50%"><img src="assets/group-chat.png"/></td>
+    </tr>
+</table>
 
-- 群聊
-
-![](assets/group-chat.png)

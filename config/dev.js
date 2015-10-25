@@ -20,7 +20,7 @@ module.exports = {
     ],
 
     spearNode:{//长连接服务地址
-        url:"http://192.168.100.122:31001"
+        url:"http://127.0.0.1:31001"
     },
 
 
